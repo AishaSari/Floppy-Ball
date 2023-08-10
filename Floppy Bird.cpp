@@ -115,17 +115,17 @@ public:
 			tubesTopPos[i].x += speed;
 			tubesBottomPos[i].x += speed;
 
-			if (tubesTopPos[i].x + tubeWidth < 0) {
-				tubesTopPos.pop_front();
-				tubesTopPos.push_back({ 0.0f, 0.0f });
-				
+			if (tubesTopPos[i].x == 0) {
 				float randomTopHeight = GetRandomValue(spaceStartMin, spaceStartMax);
-				tubesTopLength[i] = randomTopHeight;
+				tubesTopLength.push_back(randomTopHeight);
+				tubesTopPos.push_back({ screenWidth, 0.0f });
+				tubesBottomPos.push_back({ screenWidth, randomTopHeight + space });
 
-				tubesBottomPos[i].x = tubesTopPos[i].x;
-				tubesBottomPos[i].y = randomTopHeight + space;
-
-
+				if (tubesTopPos[i].x + tubeWidth < 0) {
+					tubesTopPos.pop_front();
+					tubesBottomPos.pop_front();
+					tubesTopLength.pop_front();
+				}
 			}
 
 		}
