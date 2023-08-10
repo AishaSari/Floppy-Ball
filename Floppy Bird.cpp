@@ -14,7 +14,7 @@ public:
 
 	Vector2 ballPosition = { (float)screenWidth / 4, (float)screenHeight / 2 };
 
-	const float jumpSpeed = -400.0f;
+	const float jumpSpeed = -420.0f;
 	const float fallSpeed = 4000.0f;
 	float currentSpeed = 0.0f;
 	const float rate = 15.0f;
@@ -63,11 +63,11 @@ public:
 	const float space = 350.0f; //between top and bottom
 
 	float tubeWidth = screenWidth / 10;
-	float spaceBetweenPairs = (screenWidth - (tubeWidth * 5)) / 5;
+	float spaceBetweenPairs = (screenWidth - (tubeWidth * 4)) / 4;
 
-	deque<Vector2> tubesTopPos = { { (float)(screenWidth / 4) * 3, 0.0f }, { 0.0f, 0.0f }, { 0.0f, 0.0f }, { 0.0f, 0.0f }, { 0.0f, 0.0f } };
-	deque<Vector2> tubesBottomPos = {{(float)(screenWidth / 4) * 3, 0.0f}, {0.0f, 0.0f}, { 0.0f, 0.0f }, { 0.0f, 0.0f }, { 0.0f, 0.0f } };
-	deque<float> tubesTopLength = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f }; 
+	deque<Vector2> tubesTopPos = { { (float)(screenWidth / 4) * 3, 0.0f }, { 0.0f, 0.0f }, { 0.0f, 0.0f }, { 0.0f, 0.0f } };
+	deque<Vector2> tubesBottomPos = {{(float)(screenWidth / 4) * 3, 0.0f}, {0.0f, 0.0f}, { 0.0f, 0.0f }, { 0.0f, 0.0f } };
+	deque<float> tubesTopLength = { 0.0f, 0.0f, 0.0f, 0.0f }; 
 
 	Tubes() {
 		randomHeightTop();
